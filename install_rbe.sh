@@ -110,6 +110,15 @@ export RBE_use_unified_downloads=false
 export RBE_use_unified_uploads=false
 export RBE_remote_download_mode=minimal
 
+# Keep ABI tools local
+export RBE_LOCAL_ONLY_REGEX="header-abi-diff|create_reference_dumps"
+export RBE_HEADER_ABI_DIFF_EXEC_STRATEGY=local
+export RBE_ABI_LINKER_EXEC_STRATEGY=local
+
+# Do NOT hardcode RBE_instance
+# (optional) auto versioning if you want strict separation
+# export RBE_instance="android${PLATFORM_VERSION}"
+
 # Git optimization (optional)
 export GIT_ALTERNATE_OBJECT_DIRECTORIES=/dev/shm/git-tmp
 EOF
