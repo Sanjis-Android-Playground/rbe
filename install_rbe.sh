@@ -120,7 +120,7 @@ export RBE_ABI_LINKER_EXEC_STRATEGY=local
 # export RBE_instance="android${PLATFORM_VERSION}"
 
 # Git optimization (optional)
-export GIT_ALTERNATE_OBJECT_DIRECTORIES=/dev/shm/git-tmp
+# export GIT_ALTERNATE_OBJECT_DIRECTORIES=/dev/shm/git-tmp
 EOF
 
 sudo chmod +x /etc/profile.d/rbe_env.sh
