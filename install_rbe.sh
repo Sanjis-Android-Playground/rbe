@@ -24,9 +24,9 @@ echo "[OK] reclient installed."
 
 
 # --- 2. Create RAM directory for Git optimization ---
-echo "[INFO] Creating /dev/shm/git-tmp ..."
-sudo mkdir -p /dev/shm/git-tmp
-sudo chmod 1777 /dev/shm/git-tmp
+#echo "[INFO] Creating /dev/shm/git-tmp ..."
+#sudo mkdir -p /dev/shm/git-tmp
+#sudo chmod 1777 /dev/shm/git-tmp
 
 
 # --- 3. Create global environment file ---
@@ -141,3 +141,21 @@ echo "  /opt/reclient/reproxy --version"
 echo
 echo "You may need to reopen your terminal."
 echo
+echo "[INFO] Attempting to load RBE environment..."
+
+# If script is being sourced, this WILL persist
+if [[ "${BASH_SOURCE[0]}" != "${0}" ]]; then
+    source /etc/profile.d/rbe_env.sh
+    echo "[OK] RBE environment loaded into current shell."
+else
+    # Script executed normally (most common case)
+    source /etc/profile.d/rbe_env.sh || true
+    echo
+    echo "⚠️  RBE environment installed but NOT active in this shell."
+    echo "➡️  Run the following command to activate it:"
+    echo
+    echo "    source /etc/profile.d/rbe_env.sh"
+    echo
+    echo "➡️  Or simply open a new terminal / Byobu session."
+    echo
+fi
