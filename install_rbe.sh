@@ -44,7 +44,6 @@ export RBE_display=0
 export RBE_diagnostics=0
 export RBE_errorlog=0
 
-export RBE_DIR="/opt/reclient"
 export NINJA_REMOTE_NUM_JOBS=2000
 
 # BuildBuddy service + API key
